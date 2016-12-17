@@ -1,8 +1,12 @@
 # config valid only for current version of Capistrano
 lock "3.7.1"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "christmas"
+set :repo_url, "https://nessnaj@github.com/nessnaj/christmas.git"
+set :rbenv_ruby, '2.3.3'
+
+set :stages, ["staging", "production"]
+set :default_stage, "staging"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -31,3 +35,12 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+desc 'Restart application'
+task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "sudo service thin restart"
+    end
+end
+
+#after :publishing, :restart
