@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titel:</strong>
+  <%= @dish.titel %>
+</p>
+
+<p>
+  <strong>Bereider:</strong>
+  <%= @dish.bereider %>
+</p>
+
+<p>
+  <strong>Opmerkingen:</strong>
+  <%= @dish.opmerkingen %>
+</p>
+
+<p>
+  <strong>Gang:</strong>
+  <%= @dish.course.gang %>
+</p>
+
+<%= link_to 'Bewerk', edit_dish_path(@dish) %> |
+<%= link_to 'Terug', dishes_path %>

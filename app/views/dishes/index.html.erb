@@ -1,0 +1,11 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
+<h1>Het Kerstmenu</h1>
+
+<% @courses.each do |course| %>
+	<h2><%= course.gang %></h2>
+	<%= render 'dishes/course-dishes', course: course %>
+<% end %>
+

@@ -1,0 +1,27 @@
+<% if course.dishes.empty? %>
+<p>
+	Nog geen gerecht bedacht of niet nodig geacht. Een goed idee? <%= link_to 'Vul dan hier in!', new_dish_path %>
+</p>
+<% else %>
+<table>
+	<thead>
+		<tr>
+			<th>Gang</th>
+			<th>Titel</th>
+			<th>Bereider</th>
+			<th>Opmerkingen</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% course.dishes.each do |dish| %>
+		<tr>
+			<td><%= dish.course.gang %></td>
+			<td><%= link_to dish.titel, edit_dish_path(dish) %></td>
+			<td><%= dish.bereider %></td>
+			<td><%= dish.opmerkingen %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<% end %>

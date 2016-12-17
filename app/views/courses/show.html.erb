@@ -1,0 +1,7 @@
+<h1>Gang: <%= @course.gang %></h1>
+<p id="notice"><%= notice %></p>
+
+<%= render 'dishes/course-dishes', course: @course %>
+
+<%= link_to 'Bewerk', edit_course_path(@course) %> |
+<%= link_to 'Terug', courses_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titel: MyString
+  bereider: MyString
+  opmerkingen: MyText
+  course: one
+
+two:
+  titel: MyString
+  bereider: MyString
+  opmerkingen: MyText
+  course: two

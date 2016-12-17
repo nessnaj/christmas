@@ -1,0 +1,40 @@
+<fieldset>
+<%= form_for(dish) do |f| %>
+  <% if dish.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
+
+      <ul>
+      <% dish.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titel %><br/>
+    <%= f.text_field :titel %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bereider %><br/>
+    <%= f.text_field :bereider %>
+  </div>
+
+  <div class="field">
+    <%= f.label :opmerkingen %><br/>
+    <%= f.text_area :opmerkingen %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Gang' %><br/>
+    <%= f.collection_select :course_id, @courses, :id, :gang, :prompt => "Selecteer Gang" %><br/>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <br/>
+<% end %>
+</fieldset>

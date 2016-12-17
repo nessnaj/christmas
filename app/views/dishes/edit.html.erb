@@ -1,0 +1,6 @@
+<h1>Bewerk Gerecht</h1>
+
+<%= render 'form', dish: @dish %>
+
+<%= link_to 'Terug', dishes_path %> |
+<%= link_to 'Verwijder', @dish, method: :delete, data: { confirm: 'Weet je het zeker?' } %></td>
