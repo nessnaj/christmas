@@ -52,4 +52,4 @@ task :start_server do
 end
 
 #before :starting, :stop_server
-#after :finishing, :start_server
+after 'deploy:publishing', 'thin:restart'

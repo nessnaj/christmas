@@ -48,6 +48,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'capistrano', '~> 3.7'
   gem 'capistrano-rails'
+  gem 'capistrano-thin', '~> 1.2.0'
   gem 'capistrano-rbenv', '~> 2.0', require: false
 end
 
