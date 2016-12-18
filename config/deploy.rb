@@ -50,5 +50,5 @@ task :start_server do
     end
 end
 
-before :starting, :stop_server
-after :finishing, :start_server
+#before :starting, :stop_server
+#after :finishing, :start_server
