@@ -2,8 +2,8 @@
 lock "3.7.1"
 
 set :application, "christmas"
-set :repo_url, "git@github.com:nessnaj/christmas.git"
-#set :repo_url, "https://nessnaj@github.com/nessnaj/christmas.git"
+#set :repo_url, "git@github.com:nessnaj/christmas.git"
+set :repo_url, "https://nessnaj@github.com/nessnaj/christmas.git"
 set :rbenv_ruby, '2.3.3'
 
 set :stages, ["staging", "production"]
