@@ -36,11 +36,19 @@ set :default_stage, "staging"
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-desc 'Restart application'
-task :restart do
+desc 'Stop application'
+task :stop_server do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "sudo service thin restart"
+      execute "sudo service thin stop"
     end
 end
 
-#after :log_revision, :restart
+desc 'Start application'
+task :start_server do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "sudo service thin start"
+    end
+end
+
+before :starting, :stop_server
+after :finishing, :start_server
