@@ -43,4 +43,4 @@ task :restart do
     end
 end
 
-after :log_revision, :restart
+#after :log_revision, :restart
